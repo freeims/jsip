@@ -61,7 +61,6 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         return this.headerName;
     }
 
-
     private SIPHeaderList() {
         hlist = new LinkedList<HDR>();
     }
@@ -70,14 +69,14 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * Constructor
      *
      * @param objclass
-     *            Class to set
+     *                 Class to set
      * @param hname
-     *            String to set
+     *                 String to set
      */
     protected SIPHeaderList(Class<HDR> objclass, String hname) {
         this();
         this.headerName = hname;
-        this.myClass =  objclass;
+        this.myClass = objclass;
     }
 
     /**
@@ -87,7 +86,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @param objectToAdd
      */
     public boolean add(HDR objectToAdd) {
-        hlist.add((HDR)objectToAdd);
+        hlist.add((HDR) objectToAdd);
         return true;
     }
 
@@ -99,16 +98,16 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *            Genericobject to set
      */
     public void addFirst(HDR obj) {
-        hlist.add(0,(HDR) obj);
+        hlist.add(0, (HDR) obj);
     }
 
     /**
      * Add to this list.
      *
      * @param sipheader
-     *            SIPHeader to add.
+     *                  SIPHeader to add.
      * @param top
-     *            is true if we want to add to the top of the list.
+     *                  is true if we want to add to the top of the list.
      */
     public void add(HDR sipheader, boolean top) {
         if (top)
@@ -122,12 +121,12 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * to the end of this list.
      *
      * @param other
-     *            SIPHeaderList to set
+     *                SIPHeaderList to set
      * @param topFlag
-     *            flag which indicates which end to concatenate
-     *            the lists.
+     *                flag which indicates which end to concatenate
+     *                the lists.
      * @throws IllegalArgumentException
-     *             if the two lists are not compatible
+     *                                  if the two lists are not compatible
      */
     public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
             throws IllegalArgumentException {
@@ -139,8 +138,6 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         }
 
     }
-
-
 
     /**
      * Encode a list of sip headers. Headers are returned in cannonical form.
@@ -155,8 +152,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     public StringBuilder encode(StringBuilder buffer) {
         if (hlist.isEmpty()) {
             buffer.append(headerName).append(':').append(Separators.NEWLINE);
-        }
-        else {
+        } else {
             // The following headers do not have comma separated forms for
             // multiple headers. Thus, they must be encoded separately.
             if (this.headerName.equals(SIPHeaderNames.WWW_AUTHENTICATE)
@@ -164,8 +160,9 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
                     || this.headerName.equals(SIPHeaderNames.AUTHORIZATION)
                     || this.headerName.equals(SIPHeaderNames.PROXY_AUTHORIZATION)
                     || (prettyEncode &&
-                            (this.headerName.equals(SIPHeaderNames.VIA) || this.headerName.equals(SIPHeaderNames.ROUTE) || this.headerName.equals(SIPHeaderNames.RECORD_ROUTE))) // Less confusing to read
-                    || this.getClass().equals( ExtensionHeaderList.class) ) {
+                            (this.headerName.equals(SIPHeaderNames.VIA) || this.headerName.equals(SIPHeaderNames.ROUTE)
+                                    || this.headerName.equals(SIPHeaderNames.RECORD_ROUTE))) // Less confusing to read
+                    || this.getClass().equals(ExtensionHeaderList.class)) {
                 ListIterator<HDR> li = hlist.listIterator();
                 while (li.hasNext()) {
                     HDR sipheader = (HDR) li.next();
@@ -209,11 +206,11 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return SIPHeader first element of the list.
      */
-    public Header getFirst() {
+    public HDR getFirst() {
         if (hlist == null || hlist.isEmpty())
             return null;
         else
-            return  hlist.get(0);
+            return hlist.get(0);
     }
 
     /**
@@ -221,10 +218,10 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      *
      * @return SIPHeader last element of the list.
      */
-    public Header getLast() {
+    public HDR getLast() {
         if (hlist == null || hlist.isEmpty())
             return null;
-        return  hlist.get(hlist.size() - 1);
+        return hlist.get(hlist.size() - 1);
     }
 
     /**
@@ -233,7 +230,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * @return Class of header supported by this list.
      */
     public Class<HDR> getMyClass() {
-        return  this.myClass;
+        return this.myClass;
     }
 
     /**
@@ -268,7 +265,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * Get the list iterator for a given position.
      *
      * @param position
-     *            position for the list iterator to return
+     *                 position for the list iterator to return
      * @return the generated list iterator
      */
     public ListIterator<HDR> listIterator(int position) {
@@ -278,18 +275,20 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
     /**
      * Remove the first element of this list.
      */
-    public void removeFirst() {
+    public HDR removeFirst() {
         if (hlist.size() != 0)
-            hlist.remove(0);
+            return hlist.remove(0);
+        return null;
 
     }
 
     /**
      * Remove the last element of this list.
      */
-    public void removeLast() {
+    public HDR removeLast() {
         if (hlist.size() != 0)
-            hlist.remove(hlist.size() - 1);
+            return hlist.remove(hlist.size() - 1);
+        return null;
     }
 
     /**
@@ -311,7 +310,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * check)
      *
      * @param cl
-     *            class to set
+     *           class to set
      */
     protected void setMyClass(Class<HDR> cl) {
         this.myClass = cl;
@@ -321,7 +320,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * convert to a string representation (for printing).
      *
      * @param indentation
-     *            int to set
+     *                    int to set
      * @return String string representation of object (for printing).
      */
     public String debugDump(int indentation) {
@@ -372,12 +371,12 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * insert at a location.
      *
      * @param index
-     *            location where to add the sipHeader.
+     *                  location where to add the sipHeader.
      * @param sipHeader
-     *            SIPHeader structure to add.
+     *                  SIPHeader structure to add.
      */
 
-    public void add(int index, HDR  sipHeader)
+    public void add(int index, HDR sipHeader)
             throws IndexOutOfBoundsException {
         hlist.add(index, sipHeader);
     }
@@ -386,10 +385,10 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * Equality comparison operator.
      *
      * @param other
-     *            the other object to compare with. true is returned iff the
-     *            classes match and list of headers herein is equal to the list
-     *            of headers in the target (order of the headers is not
-     *            important).
+     *              the other object to compare with. true is returned iff the
+     *              classes match and list of headers herein is equal to the list
+     *              of headers in the target (order of the headers is not
+     *              important).
      */
     @SuppressWarnings("unchecked")
     public boolean equals(Object other) {
@@ -440,7 +439,6 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         }
     }
 
-
     /**
      * make a clone of this header list.
      *
@@ -450,10 +448,10 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         try {
             Class<?> clazz = this.getClass();
 
-            Constructor<?> cons = clazz.getConstructor((Class[])null);
-            SIPHeaderList<HDR> retval = (SIPHeaderList<HDR>) cons.newInstance((Object[])null);
+            Constructor<?> cons = clazz.getConstructor((Class[]) null);
+            SIPHeaderList<HDR> retval = (SIPHeaderList<HDR>) cons.newInstance((Object[]) null);
             retval.headerName = this.headerName;
-            retval.myClass  = this.myClass;
+            retval.myClass = this.myClass;
             return retval.clonehlist(this.hlist);
         } catch (Exception ex) {
             throw new RuntimeException("Could not clone!", ex);
@@ -464,7 +462,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         if (hlistToClone != null) {
             for (Iterator<HDR> it = (Iterator<HDR>) hlistToClone.iterator(); it.hasNext();) {
                 Header h = it.next();
-                this.hlist.add((HDR)h.clone());
+                this.hlist.add((HDR) h.clone());
             }
         }
         return this;
@@ -501,7 +499,8 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         ListIterator<HDR> iterator = this.listIterator();
         while (true) {
             SIPHeader sipHeader = (SIPHeader) iterator.next();
-            if ( sipHeader == this ) throw new RuntimeException ("Unexpected circularity in SipHeaderList");
+            if (sipHeader == this)
+                throw new RuntimeException("Unexpected circularity in SipHeaderList");
             sipHeader.encodeBody(buffer);
             // if (body.equals("")) System.out.println("BODY == ");
             if (iterator.hasNext()) {
@@ -530,9 +529,6 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         return this.hlist.containsAll(collection);
     }
 
-
-
-
     public void clear() {
         this.hlist.clear();
     }
@@ -541,16 +537,15 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
         return this.hlist.contains(header);
     }
 
-
     /**
      * Get the object at the specified location.
      *
      * @param index --
-     *            location from which to get the object.
+     *              location from which to get the object.
      *
      */
     public HDR get(int index) {
-        return  this.hlist.get(index);
+        return this.hlist.get(index);
     }
 
     /**
@@ -602,7 +597,7 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
      * Remove the object at a given index.
      *
      * @param index --
-     *            index at which to remove the object
+     *              index at which to remove the object
      */
 
     public HDR remove(int index) {
@@ -611,12 +606,12 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
 
     /**
      * Remove all the elements.
+     * 
      * @see List#removeAll(java.util.Collection)
      */
     public boolean removeAll(java.util.Collection<?> collection) {
         return this.hlist.removeAll(collection);
     }
-
 
     /**
      * @see List#retainAll(java.util.Collection)
@@ -656,15 +651,12 @@ public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader imp
 
     }
 
-
     public static void setPrettyEncode(boolean flag) {
         prettyEncode = flag;
     }
 
-
     public <T> T[] toArray(T[] array) {
         return this.hlist.toArray(array);
     }
-
 
 }
