@@ -2,9 +2,9 @@ package javax.sdp;
 
 import java.util.*;
 
-import org.freeims.javax.sdp.*;
-import org.freeims.javax.sdp.fields.*;
-import org.freeims.javax.sdp.parser.*;
+import com.github.freeims.javax.sdp.*;
+import com.github.freeims.javax.sdp.fields.*;
+import com.github.freeims.javax.sdp.parser.*;
 
 import java.net.*;
 import java.text.*;
@@ -59,8 +59,8 @@ public class SdpFactory extends Object {
      * t=0 0
      *
      * @throws SdpException
-     *             SdpException, - if there is a problem constructing the
-     *             SessionDescription.
+     *                      SdpException, - if there is a problem constructing the
+     *                      SessionDescription.
      * @return a new, empty SessionDescription.
      */
     public SessionDescription createSessionDescription() throws SdpException {
@@ -99,11 +99,12 @@ public class SdpFactory extends Object {
      * SessionDescription.
      *
      * @param otherSessionDescription -
-     *            the SessionDescription to copy from.
+     *                                the SessionDescription to copy from.
      * @return a new SessionDescription, exact and deep copy of the
      *         otherSessionDescription.
      * @throws SdpException -
-     *             if there is a problem constructing the SessionDescription.
+     *                      if there is a problem constructing the
+     *                      SessionDescription.
      */
     public SessionDescription createSessionDescription(
             SessionDescription otherSessionDescription) throws SdpException {
@@ -117,9 +118,10 @@ public class SdpFactory extends Object {
      * Note: unknown field types should not cause exceptions.
      *
      * @param s
-     *            s - the sdp message that is to be parsed.
+     *          s - the sdp message that is to be parsed.
      * @throws SdpParseException
-     *             SdpParseException - if there is a problem parsing the String.
+     *                           SdpParseException - if there is a problem parsing
+     *                           the String.
      * @return a populated SessionDescription object.
      */
     public SessionDescription createSessionDescription(String s)
@@ -138,9 +140,9 @@ public class SdpFactory extends Object {
      * Returns Bandwidth object with the specified values.
      *
      * @param modifier
-     *            modifier - the bandwidth type
+     *                 modifier - the bandwidth type
      * @param value
-     *            the bandwidth value measured in kilobits per second
+     *                 the bandwidth value measured in kilobits per second
      * @return bandwidth
      */
     public BandWidth createBandwidth(String modifier, int value) {
@@ -160,9 +162,9 @@ public class SdpFactory extends Object {
      * Returns Attribute object with the specified values.
      *
      * @param name
-     *            the namee of the attribute
+     *              the namee of the attribute
      * @param value
-     *            the value of the attribute
+     *              the value of the attribute
      * @return Attribute
      */
     public Attribute createAttribute(String name, String value) {
@@ -182,7 +184,7 @@ public class SdpFactory extends Object {
      * Returns Info object with the specified value.
      *
      * @param value
-     *            the string containing the description.
+     *              the string containing the description.
      * @return Info
      */
     public Info createInfo(String value) {
@@ -201,7 +203,7 @@ public class SdpFactory extends Object {
      * Returns Phone object with the specified value.
      *
      * @param value
-     *            the string containing the description.
+     *              the string containing the description.
      * @return Phone
      */
     public Phone createPhone(String value) {
@@ -220,7 +222,7 @@ public class SdpFactory extends Object {
      * Returns EMail object with the specified value.
      *
      * @param value
-     *            the string containing the description.
+     *              the string containing the description.
      * @return EMail
      */
     public EMail createEMail(String value) {
@@ -239,7 +241,7 @@ public class SdpFactory extends Object {
      * Returns URI object with the specified value.
      *
      * @param value
-     *            the URL containing the description.
+     *              the URL containing the description.
      * @throws SdpException
      * @return URI
      */
@@ -255,7 +257,7 @@ public class SdpFactory extends Object {
      * Returns SessionName object with the specified name.
      *
      * @param name
-     *            the string containing the name of the session.
+     *             the string containing the name of the session.
      * @return SessionName
      */
     public SessionName createSessionName(String name) {
@@ -274,9 +276,9 @@ public class SdpFactory extends Object {
      * Returns Key object with the specified value.
      *
      * @param method
-     *            the string containing the method type.
+     *               the string containing the method type.
      * @param key
-     *            the key to set
+     *               the key to set
      * @return Key
      */
     public Key createKey(String method, String key) {
@@ -297,7 +299,7 @@ public class SdpFactory extends Object {
      * Returns Version object with the specified values.
      *
      * @param value
-     *            the version number.
+     *              the version number.
      * @return Version
      */
     public Version createVersion(int value) {
@@ -317,15 +319,15 @@ public class SdpFactory extends Object {
      * Returns Media object with the specified properties.
      *
      * @param media
-     *            the media type, eg "audio"
+     *                          the media type, eg "audio"
      * @param port
-     *            port number on which to receive media
+     *                          port number on which to receive media
      * @param numPorts
-     *            number of ports used for this media stream
+     *                          number of ports used for this media stream
      * @param transport
-     *            transport type, eg "RTP/AVP"
+     *                          transport type, eg "RTP/AVP"
      * @param staticRtpAvpTypes
-     *            vector to set
+     *                          vector to set
      * @throws SdpException
      * @return Media
      */
@@ -344,11 +346,11 @@ public class SdpFactory extends Object {
      * Returns Origin object with the specified properties.
      *
      * @param userName
-     *            the user name.
+     *                 the user name.
      * @param address
-     *            the IP4 encoded address.
+     *                 the IP4 encoded address.
      * @throws SdpException
-     *             if the parameters are null
+     *                      if the parameters are null
      * @return Origin
      */
     public Origin createOrigin(String userName, String address)
@@ -365,19 +367,19 @@ public class SdpFactory extends Object {
      * Returns Origin object with the specified properties.
      *
      * @param userName
-     *            String containing the user that created the string.
+     *                       String containing the user that created the string.
      * @param sessionId
-     *            long containing the session identifier.
+     *                       long containing the session identifier.
      * @param sessionVersion
-     *            long containing the session version.
+     *                       long containing the session version.
      * @param networkType
-     *            String network type for the origin (usually "IN").
+     *                       String network type for the origin (usually "IN").
      * @param addrType
-     *            String address type (usually "IP4").
+     *                       String address type (usually "IP4").
      * @param address
-     *            String IP address usually the address of the host.
+     *                       String IP address usually the address of the host.
      * @throws SdpException
-     *             if the parameters are null
+     *                      if the parameters are null
      * @return Origin object with the specified properties.
      */
     public Origin createOrigin(String userName, long sessionId,
@@ -399,18 +401,20 @@ public class SdpFactory extends Object {
      * Vector of media formats.
      *
      * @param media
-     *            media -
+     *                          media -
      * @param port
-     *            port number on which to receive media
+     *                          port number on which to receive media
      * @param numPorts
-     *            number of ports used for this media stream
+     *                          number of ports used for this media stream
      * @param transport
-     *            transport type, eg "RTP/AVP"
+     *                          transport type, eg "RTP/AVP"
      * @param staticRtpAvpTypes
-     *            list of static RTP/AVP media payload types which should be
-     *            specified by the returned MediaDescription throws
-     *            IllegalArgumentException if passed an invalid RTP/AVP payload
-     *            type
+     *                          list of static RTP/AVP media payload types which
+     *                          should be
+     *                          specified by the returned MediaDescription throws
+     *                          IllegalArgumentException if passed an invalid
+     *                          RTP/AVP payload
+     *                          type
      * @throws IllegalArgumentException
      * @throws SdpException
      * @return MediaDescription
@@ -439,16 +443,16 @@ public class SdpFactory extends Object {
      * Vector of String objects specified by the 'formats argument.
      *
      * @param media
-     *            the media type, eg "audio"
+     *                  the media type, eg "audio"
      * @param port
-     *            port number on which to receive media
+     *                  port number on which to receive media
      * @param numPorts
-     *            number of ports used for this media stream
+     *                  number of ports used for this media stream
      * @param transport
-     *            transport type, eg "RTP/AVP"
+     *                  transport type, eg "RTP/AVP"
      * @param formats
-     *            list of formats which should be specified by the returned
-     *            MediaDescription
+     *                  list of formats which should be specified by the returned
+     *                  MediaDescription
      * @return MediaDescription
      */
     public MediaDescription createMediaDescription(String media, int port,
@@ -477,8 +481,8 @@ public class SdpFactory extends Object {
      * Returns TimeDescription object with the specified properties.
      *
      * @param t
-     *            the Time that the time description applies to. Returns
-     *            TimeDescription object with the specified properties.
+     *          the Time that the time description applies to. Returns
+     *          TimeDescription object with the specified properties.
      * @throws SdpException
      * @return TimeDescription
      */
@@ -506,11 +510,11 @@ public class SdpFactory extends Object {
      * Returns TimeDescription object with the specified properties.
      *
      * @param start
-     *            start time.
+     *              start time.
      * @param stop
-     *            stop time.
+     *              stop time.
      * @throws SdpException
-     *             if the parameters are null
+     *                      if the parameters are null
      * @return TimeDescription
      */
     public TimeDescription createTimeDescription(Date start, Date stop)
@@ -539,15 +543,15 @@ public class SdpFactory extends Object {
      * Returns a Connection object with the specified properties a
      *
      * @param netType
-     *            network type, eg "IN" for "Internet"
+     *                 network type, eg "IN" for "Internet"
      * @param addrType
-     *            address type, eg "IP4" for IPv4 type addresses
+     *                 address type, eg "IP4" for IPv4 type addresses
      * @param addr
-     *            connection address
+     *                 connection address
      * @param ttl
-     *            time to live (TTL) for multicast addresses
+     *                 time to live (TTL) for multicast addresses
      * @param numAddrs
-     *            number of addresses used by the connection
+     *                 number of addresses used by the connection
      * @return Connection
      */
     public Connection createConnection(String netType, String addrType,
@@ -566,13 +570,13 @@ public class SdpFactory extends Object {
      * a default number of addresses (1).
      *
      * @param netType
-     *            network type, eg "IN" for "Internet"
+     *                 network type, eg "IN" for "Internet"
      * @param addrType
-     *            address type, eg "IP4" for IPv4 type addresses
+     *                 address type, eg "IP4" for IPv4 type addresses
      * @param addr
-     *            connection address
+     *                 connection address
      * @throws SdpException
-     *             if the parameters are null
+     *                      if the parameters are null
      * @return Connection
      */
     public Connection createConnection(String netType, String addrType,
@@ -591,11 +595,11 @@ public class SdpFactory extends Object {
      * and address type of "IN" and "IP4" respectively.
      *
      * @param addr
-     *            connection address
+     *                 connection address
      * @param ttl
-     *            time to live (TTL) for multicast addresses
+     *                 time to live (TTL) for multicast addresses
      * @param numAddrs
-     *            number of addresses used by the connection
+     *                 number of addresses used by the connection
      * @return Connection
      */
     public Connection createConnection(String addr, int ttl, int numAddrs)
@@ -614,9 +618,9 @@ public class SdpFactory extends Object {
      * createConnection("IN", "IP4", addr);
      *
      * @param addr
-     *            connection address
+     *             connection address
      * @throws SdpException
-     *             if the parameter is null
+     *                      if the parameter is null
      * @return Connection
      */
     public Connection createConnection(String addr) throws SdpException {
@@ -629,11 +633,11 @@ public class SdpFactory extends Object {
      * Returns a Time specification with the specified start and stop times.
      *
      * @param start
-     *            start time
+     *              start time
      * @param stop
-     *            stop time
+     *              stop time
      * @throws SdpException
-     *             if the parameters are null
+     *                      if the parameters are null
      * @return a Time specification with the specified start and stop times.
      */
     public Time createTime(Date start, Date stop) throws SdpException {
@@ -660,12 +664,14 @@ public class SdpFactory extends Object {
      * time offsets.
      *
      * @param repeatInterval
-     *            the "repeat interval" in seconds
+     *                       the "repeat interval" in seconds
      * @param activeDuration
-     *            the "active duration" in seconds
+     *                       the "active duration" in seconds
      * @param offsets
-     *            the list of offsets relative to the start time of the Time
-     *            object with which the returned RepeatTime will be associated
+     *                       the list of offsets relative to the start time of the
+     *                       Time
+     *                       object with which the returned RepeatTime will be
+     *                       associated
      * @return RepeatTime
      */
     public RepeatTime createRepeatTime(int repeatInterval, int activeDuration,
@@ -687,11 +693,11 @@ public class SdpFactory extends Object {
      * Constructs a timezone adjustment record.
      *
      * @param d
-     *            the Date at which the adjustment is going to take place.
+     *               the Date at which the adjustment is going to take place.
      * @param offset
-     *            the adjustment in number of seconds relative to the start time
-     *            of the SessionDescription with which this object is
-     *            associated.
+     *               the adjustment in number of seconds relative to the start time
+     *               of the SessionDescription with which this object is
+     *               associated.
      * @return TimeZoneAdjustment
      */
     public TimeZoneAdjustment createTimeZoneAdjustment(Date d, int offset) {
@@ -712,13 +718,14 @@ public class SdpFactory extends Object {
      *
      * @param args
      * @throws SdpException
-     *             public static void main(String[] args) throws SdpException {
-     *  }
+     *                      public static void main(String[] args) throws
+     *                      SdpException {
+     *                      }
      */
 
     /**
      * @param ntpTime
-     *            long to set
+     *                long to set
      * @return Returns a Date object for a given NTP date value.
      */
     public static Date getDateFromNtp(long ntpTime) {
@@ -729,7 +736,7 @@ public class SdpFactory extends Object {
      * Returns a long containing the NTP value for a given Java Date.
      *
      * @param d
-     *            Date to set
+     *          Date to set
      * @return long
      */
     public static long getNtpTime(Date d) throws SdpParseException {

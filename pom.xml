@@ -12,7 +12,7 @@
   <url>https://github.com/freeims/jsip</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.sourceEncoding>ASCII</project.build.sourceEncoding>
     <java.version>21</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -40,6 +40,11 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
+          <compilerArgs>
+            <!-- <arg>-verbose</arg> -->
+            <!-- <arg>-encoding US-ASCII</arg> -->
+            <!-- <arg>-Xlint:all,-options,-path</arg> -->
+          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>

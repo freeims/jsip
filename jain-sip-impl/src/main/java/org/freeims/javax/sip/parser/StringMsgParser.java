@@ -37,8 +37,6 @@ import java.text.ParseException;
  * simpler and quicker.
  */
 
-//import javax.xml.bind.DatatypeConverter;
-
 import org.freeims.core.CommonLogger;
 import org.freeims.core.Host;
 import org.freeims.core.HostNameParser;
