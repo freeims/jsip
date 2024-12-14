@@ -26,7 +26,9 @@
 package com.github.freeims.javax.sdp.parser;
 
 import java.util.*;
-import org.freeims.core.*;
+
+import com.github.freeims.freeims.core.*;
+
 import java.text.ParseException;
 import java.lang.reflect.*;
 

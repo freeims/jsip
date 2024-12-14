@@ -28,7 +28,7 @@
 *******************************************************************************/
 package com.github.freeims.javax.sdp.fields;
 
-import org.freeims.core.*;
+import com.github.freeims.freeims.core.*;
 
 /**
  * Email address record.

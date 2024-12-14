@@ -28,8 +28,9 @@
 *******************************************************************************/
 package com.github.freeims.javax.sdp.fields;
 
-import org.freeims.core.*;
 import java.lang.reflect.*;
+
+import com.github.freeims.freeims.core.*;
 
 /**
  * Root class for everything in this package.

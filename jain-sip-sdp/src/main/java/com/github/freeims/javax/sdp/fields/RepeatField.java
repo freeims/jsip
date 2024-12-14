@@ -28,10 +28,11 @@
 *******************************************************************************/
 package com.github.freeims.javax.sdp.fields;
 
-import org.freeims.core.*;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import javax.sdp.*;
+
+import com.github.freeims.freeims.core.*;
 
 /**
  * Repeat SDP Field (part of the time field).

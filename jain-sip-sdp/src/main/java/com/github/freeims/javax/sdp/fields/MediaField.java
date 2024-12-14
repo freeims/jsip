@@ -28,8 +28,10 @@
 *******************************************************************************/
 package com.github.freeims.javax.sdp.fields;
 
-import org.freeims.core.*;
 import javax.sdp.*;
+
+import com.github.freeims.freeims.core.*;
+
 import java.util.*;
 
 /**

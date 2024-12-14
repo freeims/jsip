@@ -33,7 +33,8 @@ import java.io.Serializable;
 import java.util.Vector;
 import javax.sdp.SdpException;
 import javax.sdp.SdpParseException;
-import org.freeims.core.NameValue;
+
+import com.github.freeims.freeims.core.NameValue;
 
 /**
  * Precondition fields (segmented / end-to-end).
