@@ -30,7 +30,7 @@ package com.github.freeims.javax.sdp.fields;
 
 import java.net.*;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 /**
  * Implementation of URI field.

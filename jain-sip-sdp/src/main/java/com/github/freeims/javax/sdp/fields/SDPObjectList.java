@@ -30,7 +30,7 @@ package com.github.freeims.javax.sdp.fields;
 
 import java.util.ListIterator;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 import java.util.Iterator;
 import java.util.LinkedList;

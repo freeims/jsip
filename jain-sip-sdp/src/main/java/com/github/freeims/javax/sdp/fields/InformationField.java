@@ -30,7 +30,7 @@ package com.github.freeims.javax.sdp.fields;
 
 import javax.sdp.*;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 /**
  * Information field implementation

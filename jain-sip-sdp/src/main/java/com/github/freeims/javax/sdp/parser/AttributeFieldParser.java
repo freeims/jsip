@@ -31,7 +31,7 @@
 
 package com.github.freeims.javax.sdp.parser;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 import com.github.freeims.javax.sdp.fields.*;
 
 import java.text.*;

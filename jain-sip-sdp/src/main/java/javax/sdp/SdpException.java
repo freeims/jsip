@@ -6,7 +6,7 @@
 
 package javax.sdp;
 
-import com.github.freeims.freeims.core.Separators;
+import com.github.freeims.core.Separators;
 
 /**
  * The SdpException defines a general exception for the SDP classes to throw

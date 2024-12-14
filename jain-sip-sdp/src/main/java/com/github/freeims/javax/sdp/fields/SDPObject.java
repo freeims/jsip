@@ -30,7 +30,7 @@ package com.github.freeims.javax.sdp.fields;
 
 import java.lang.reflect.*;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 /**
  * Root class for everything in this package.

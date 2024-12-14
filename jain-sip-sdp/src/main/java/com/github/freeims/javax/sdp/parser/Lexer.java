@@ -25,7 +25,7 @@
 */
 package com.github.freeims.javax.sdp.parser;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 public class Lexer extends LexerCore {
     public Lexer(String lexerName, String buffer) {

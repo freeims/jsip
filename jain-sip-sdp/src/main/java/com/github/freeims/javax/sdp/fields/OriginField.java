@@ -31,8 +31,8 @@ package com.github.freeims.javax.sdp.fields;
 import javax.sdp.SdpException;
 import javax.sdp.SdpParseException;
 
-import com.github.freeims.freeims.core.Host;
-import com.github.freeims.freeims.core.Separators;
+import com.github.freeims.core.Host;
+import com.github.freeims.core.Separators;
 
 /**
  * Origin Field SDP header

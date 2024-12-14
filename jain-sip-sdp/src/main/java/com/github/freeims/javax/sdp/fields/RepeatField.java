@@ -32,7 +32,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import javax.sdp.*;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 
 /**
  * Repeat SDP Field (part of the time field).

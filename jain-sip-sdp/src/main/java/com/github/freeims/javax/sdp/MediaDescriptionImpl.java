@@ -29,7 +29,7 @@ import javax.sdp.*;
 
 import java.util.*;
 
-import com.github.freeims.freeims.core.*;
+import com.github.freeims.core.*;
 import com.github.freeims.javax.sdp.fields.*;
 
 /*

@@ -34,7 +34,7 @@ import java.util.Vector;
 import javax.sdp.SdpException;
 import javax.sdp.SdpParseException;
 
-import com.github.freeims.freeims.core.NameValue;
+import com.github.freeims.core.NameValue;
 
 /**
  * Precondition fields (segmented / end-to-end).
