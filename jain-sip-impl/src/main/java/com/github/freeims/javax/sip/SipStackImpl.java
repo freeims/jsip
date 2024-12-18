@@ -103,9 +103,10 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * array when you create the JAIN-SIP statck):
  * <ul>
  * 
- * <li><b>org.freeims.javax.sip.TRACE_LEVEL = integer </b><br/>
+ * <li><b>com.github.freeims.javax.sip.TRACE_LEVEL = integer </b><br/>
  * <b> Use of this property is still supported but deprecated. Please use
- * org.freeims.javax.sip.STACK_LOGGER and org.freeims.javax.sip.SERVER_LOGGER
+ * com.github.freeims.javax.sip.STACK_LOGGER and
+ * com.github.freeims.javax.sip.SERVER_LOGGER
  * for
  * integration with logging frameworks and for custom formatting of log records.
  * </b> This property is used by the built in log4j based logger. You can use
@@ -120,16 +121,19 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * for level 32 and 16 respectively. If the value of this property is set to
  * LOG4J, then the effective log levels are determined from the log4j settings
  * file (e.g. log4j.properties). The logger name for the stack is specified
- * using the org.freeims.javax.sip.LOG4J_LOGGER_NAME property. By default log4j
+ * using the com.github.freeims.javax.sip.LOG4J_LOGGER_NAME property. By default
+ * log4j
  * logger name for the stack is the same as the stack name. For example, <code>
- * properties.setProperty("org.freeims.javax.sip.TRACE_LEVEL", "LOG4J");
- * properties.setProperty("org.freeims.javax.sip.LOG4J_LOGGER_NAME", "SIPStackLogger");
+ * properties.setProperty("com.github.freeims.javax.sip.TRACE_LEVEL", "LOG4J");
+ * properties.setProperty("com.github.freeims.javax.sip.LOG4J_LOGGER_NAME", "SIPStackLogger");
  * </code> allows you to now control logging in the stack entirely using log4j
  * facilities.</li>
  * 
- * <li><b>org.freeims.javax.sip.LOG_FACTORY = classpath </b> <b> Use of this
+ * <li><b>com.github.freeims.javax.sip.LOG_FACTORY = classpath </b> <b> Use of
+ * this
  * property is still supported but deprecated. Please use
- * org.freeims.javax.sip.STACK_LOGGER and org.freeims.javax.sip.SERVER_LOGGER
+ * com.github.freeims.javax.sip.STACK_LOGGER and
+ * com.github.freeims.javax.sip.SERVER_LOGGER
  * for
  * integration with logging frameworks and for custom formatting of log records.
  * </b> <br/>
@@ -139,9 +143,10 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * information related to the application or environmental conditions into the
  * log stream. The log factory must have a default constructor.</li>
  * 
- * <li><b>org.freeims.javax.sip.SERVER_LOG = fileName </b><br/>
+ * <li><b>com.github.freeims.javax.sip.SERVER_LOG = fileName </b><br/>
  * <b> Use of this property is still supported but deprecated. Please use
- * org.freeims.javax.sip.STACK_LOGGER and org.freeims.javax.sip.SERVER_LOGGER
+ * com.github.freeims.javax.sip.STACK_LOGGER and
+ * com.github.freeims.javax.sip.SERVER_LOGGER
  * for
  * integration with logging frameworks and for custom formatting of log records.
  * </b> Log valid incoming messages here. If this is left null AND the
@@ -150,43 +155,48 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * trace viewer application which is located in the tools/tracesviewer
  * directory. <font color=red> Mail this to us with bug reports. </font></li>
  * 
- * <li><b>org.freeims.javax.sip.DEBUG_LOG = fileName </b> <b> Use of this
+ * <li><b>com.github.freeims.javax.sip.DEBUG_LOG = fileName </b> <b> Use of this
  * property
  * is still supported but deprecated. Please use
- * org.freeims.javax.sip.STACK_LOGGER
- * and org.freeims.javax.sip.SERVER_LOGGER for integration with logging
+ * com.github.freeims.javax.sip.STACK_LOGGER
+ * and com.github.freeims.javax.sip.SERVER_LOGGER for integration with logging
  * frameworks
  * and for custom formatting of log records. </b> <br/>
  * Where the debug log goes. <font color=red> Mail this to us with bug reports.
  * </font></li>
  * 
- * <li><b>org.freeims.javax.sip.LOG_MESSAGE_CONTENT = true|false </b><br/>
+ * <li><b>com.github.freeims.javax.sip.LOG_MESSAGE_CONTENT = true|false
+ * </b><br/>
  * Set true if you want to capture content into the log. Default is false. A bad
  * idea to log content if you are using SIP to push a lot of bytes through
  * TCP.</li>
  * 
- * <li><b>org.freeims.javax.sip.LOG_STACK_TRACE_ON_MESSAGE_SEND = true|false
+ * <li><b>com.github.freeims.javax.sip.LOG_STACK_TRACE_ON_MESSAGE_SEND =
+ * true|false
  * </b><br/>
  * Set true if you want to to log a stack trace at INFO level for each message
  * send. This is really handy for debugging.</li>
  * 
- * <li><b>org.freeims.javax.sip.STACK_LOGGER = full path name to the class
- * implementing org.freeims.core.StackLogger interface</b><br/>
+ * <li><b>com.github.freeims.javax.sip.STACK_LOGGER = full path name to the
+ * class
+ * implementing com.github.freeims.core.StackLogger interface</b><br/>
  * If this property is defined the sip stack will try to instantiate it through
  * a no arg constructor. This allows to use different logging implementations
  * than the ones provided by default to log what happens within the stack while
  * processing SIP messages. If this property is not defined, the default sip
  * stack LogWriter will be used for logging</li>
  * 
- * <li><b>org.freeims.javax.sip.SERVER_LOGGER = full path name to the class
- * implementing org.freeims.core.ServerLogger interface</b><br/>
+ * <li><b>com.github.freeims.javax.sip.SERVER_LOGGER = full path name to the
+ * class
+ * implementing com.github.freeims.core.ServerLogger interface</b><br/>
  * If this property is defined the sip stack will try to instantiate it through
  * a no arg constructor. This allows to use different logging implementations
  * than the ones provided by default to log sent/received messages by the sip
  * stack. If this property is not defined, the default sip stack ServerLog will
  * be used for logging</li>
  * 
- * <li><b>org.freeims.javax.sip.AUTOMATIC_DIALOG_ERROR_HANDLING = [true|false]
+ * <li><b>com.github.freeims.javax.sip.AUTOMATIC_DIALOG_ERROR_HANDLING =
+ * [true|false]
  * </b>
  * <br/>
  * Default is <it>true</it>. This is also settable on a per-provider basis. This
@@ -206,7 +216,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * 
  * </ul>
  * 
- * <li><b>org.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT = [true|false]
+ * </b>
  * <br/>
  * Default is <it>false</it> This property controls a setting on the Dialog
  * objects that the stack manages. Pure B2BUA applications should set this flag
@@ -219,12 +230,13 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * in-DIALOG transaction was a INVITE ServerTransaction then Dialog waits for
  * ACK before re-INVITE is allowed to be sent. If a dialog is not ACKed within
  * 32 seconds, then the dialog is torn down and a BYE sent to the peer.</li>
- * <li><b>org.freeims.javax.sip.MAX_MESSAGE_SIZE = integer</b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_MESSAGE_SIZE = integer</b> <br/>
  * Maximum size of content that a TCP connection can read. Must be at least 4K.
  * Default is "infinity" -- ie. no limit. This is to prevent DOS attacks
  * launched by writing to a TCP connection until the server chokes.</li>
  * 
- * <li><b>org.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG =
+ * <li><b>com.github.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG
+ * =
  * [true|false] </b><br/>
  * If set to false (the default), the application does NOT get notified when a
  * Dialog in the
@@ -237,7 +249,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * when a Dialog in the NULL state is terminated.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.CACHE_SERVER_CONNECTIONS = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.CACHE_SERVER_CONNECTIONS = [true|false]
+ * </b>
  * <br/>
  * Default value is true. Setting this to false makes the Stack close the server
  * socket after a Server Transaction goes to the TERMINATED state. This allows a
@@ -248,7 +261,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * attacks.</li>
  * 
  * 
- * <li><b>org.freeims.javax.sip.CACHE_CLIENT_CONNECTIONS = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.CACHE_CLIENT_CONNECTIONS = [true|false]
+ * </b>
  * <br/>
  * Default value is true. Setting this to false makes the Stack close the server
  * socket after a Client Transaction goes to the TERMINATED state. This allows a
@@ -256,7 +270,7 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * client transaction after the transaction has terminated at the expense of
  * performance.</li>
  * 
- * <li><b>org.freeims.javax.sip.THREAD_POOL_SIZE = integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.THREAD_POOL_SIZE = integer </b> <br/>
  * Concurrency control for number of simultaneous active threads. If
  * unspecificed, the default is "infinity". This feature is useful if you are
  * trying to build a container.
@@ -273,7 +287,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * machine but will run the listener in its own thread.</li>
  * </ul>
  * 
- * <li><b>org.freeims.javax.sip.REENTRANT_LISTENER = true|false </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.REENTRANT_LISTENER = true|false </b>
+ * <br/>
  * Default is false. Set to true if the listener is re-entrant. If the listener
  * is re-entrant then the stack manages a thread pool and synchronously calls
  * the listener from the same thread which read the message. Multiple
@@ -283,29 +298,33 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * multithreaded machine write your listener to be re-entrant and set this
  * property to be true </b></li>
  * 
- * <li><b>org.freeims.javax.sip.MAX_CONNECTIONS = integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_CONNECTIONS = integer </b> <br/>
  * Max number of simultaneous TCP connections handled by stack.</li>
  * 
- * <li><b>org.freeims.javax.sip.MAX_SERVER_TRANSACTIONS = integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_SERVER_TRANSACTIONS = integer </b>
+ * <br/>
  * Maximum size of server transaction table. The low water mark is 80% of the
  * high water mark. Requests are selectively dropped in the lowater mark to
  * highwater mark range. Requests are unconditionally accepted if the table is
  * smaller than the low water mark. The default highwater mark is 5000</li>
  * 
- * <li><b>org.freeims.javax.sip.MAX_CLIENT_TRANSACTIONS = integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_CLIENT_TRANSACTIONS = integer </b>
+ * <br/>
  * Max number of active client transactions before the caller blocks and waits
  * for the number to drop below a threshold. Default is unlimited, i.e. the
  * caller never blocks and waits for a client transaction to become available
  * (i.e. it does its own resource management in the application).</li>
  * 
- * <li><b>org.freeims.javax.sip.PASS_INVITE_NON_2XX_ACK_TO_LISTENER = true|false
+ * <li><b>com.github.freeims.javax.sip.PASS_INVITE_NON_2XX_ACK_TO_LISTENER =
+ * true|false
  * </b> <br/>
  * If true then the listener will see the ACK for non-2xx responses for server
  * transactions. This is not standard behavior per RFC 3261 (INVITE server
  * transaction state machine) but this is a useful flag for testing. The TCK
  * uses this flag for example.</li>
  * 
- * <li><b>org.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME = Integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME = Integer </b>
+ * <br/>
  * Max time (seconds) to wait on the transaction lock used to serialize message
  * delivery.
  * Default time is "infinity" - i.e. if the listener never
@@ -316,7 +335,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * delay in
  * the listener.
  * 
- * <li><b>org.freeims.javax.sip.MAX_TX_LIFETIME_INVITE = Integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_TX_LIFETIME_INVITE = Integer </b>
+ * <br/>
  * Defaults -1 : infinite. Typical can be dependent on early dialog timeout by
  * example 3 minutes could be a good default
  * Max time (seconds) an INVITE transaction is supposed to live in the stack.
@@ -327,7 +347,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * from
  * the stack after the typical lingering period of 8s in the stack
  * 
- * <li><b>org.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE = Integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE = Integer </b>
+ * <br/>
  * Defaults -1 : infinite. Typical is dependent on T1 by example 2 * T1 could be
  * a good default
  * Max time (seconds) a non INVITE transaction is supposed to live in the stack.
@@ -341,7 +362,7 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * INVITE
  * and so can be collected ore eagerly to save up on memory usage
  * 
- * <li><b>org.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_ACK =
+ * <li><b>com.github.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_ACK =
  * [true|false]</b>
  * <br/>
  * Default is <it>false</it>. ACK Server Transaction is a Pseuedo-transaction.
@@ -349,7 +370,7 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * transactions can be handled uniformly in user code during cleanup), then set
  * this flag to <it>true</it>.</li>
  * 
- * <li><b>org.freeims.javax.sip.READ_TIMEOUT = integer </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.READ_TIMEOUT = integer </b> <br/>
  * This is relevant for incoming TCP connections to prevent starvation at the
  * server. This defines the timeout in miliseconds between successive reads
  * after the first byte of a SIP message is read by the stack. All the sip
@@ -358,31 +379,34 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * is wide open to starvation attacks) and the client can be as slow as it wants
  * to be.</li>
  * 
- * <li><b>org.freeims.javax.sip.NETWORK_LAYER = classpath </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.NETWORK_LAYER = classpath </b> <br/>
  * This is an EXPERIMENTAL property (still under active devlopment). Defines a
  * network layer that allows a client to have control over socket allocations
  * and monitoring of socket activity. A network layer should implement
- * org.freeims.core.net.NetworkLayer. The default implementation simply acts as
+ * com.github.freeims.core.net.NetworkLayer. The default implementation simply
+ * acts as
  * a
  * wrapper for the standard java.net socket layer. This functionality is still
  * under active development (may be extended to support security and other
  * features).</li>
  * 
- * <li><b>org.freeims.javax.sip.ADDRESS_RESOLVER = classpath </b><br/>
+ * <li><b>com.github.freeims.javax.sip.ADDRESS_RESOLVER = classpath </b><br/>
  * The fully qualified class path for an implementation of the AddressResolver
  * interface. The AddressResolver allows you to support lookup schemes for
  * addresses that are not directly resolvable to IP adresses using
  * getHostByName. Specifying your own address resolver allows you to customize
  * address lookup. The default address resolver is a pass-through address
  * resolver (i.e. just returns the input string without doing a resolution). See
- * org.freeims.javax.sip.DefaultAddressResolver.</li>
+ * com.github.freeims.javax.sip.DefaultAddressResolver.</li>
  * 
- * <li><b>org.freeims.javax.sip.AUTO_GENERATE_TIMESTAMP= [true| false] </b><br/>
+ * <li><b>com.github.freeims.javax.sip.AUTO_GENERATE_TIMESTAMP= [true| false]
+ * </b><br/>
  * (default is false) Automatically generate a getTimeOfDay timestamp for a
  * retransmitted request if the original request contained a timestamp. This is
  * useful for profiling.</li>
  * 
- * <li><b>org.freeims.javax.sip.THREAD_AUDIT_INTERVAL_IN_MILLISECS = long </b>
+ * <li><b>com.github.freeims.javax.sip.THREAD_AUDIT_INTERVAL_IN_MILLISECS = long
+ * </b>
  * <br/>
  * Defines how often the application intends to audit the SIP Stack about the
  * health of its internal threads (the property specifies the time in
@@ -395,7 +419,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * remain disabled. An example of how to use this property is in
  * src/examples/threadaudit.</li>
  * 
- * <li><b>org.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME = long </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME = long </b>
+ * <br/>
  * Defines the number of milliseconds a NIO TCP socket will be kept alive after
  * the
  * last IO operation on that socket. This allows to clean up after high initial
@@ -407,7 +432,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * by the SIP RFC spec.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.stack.USE_DIRECT_BUFFERS = [true|false]</b>
+ * <li><b>com.github.freeims.javax.sip.stack.USE_DIRECT_BUFFERS =
+ * [true|false]</b>
  * <br/>
  * Default is <it>true</it> If set to <it>false</it>, the NIO stack won't use
  * direct buffers.
@@ -418,7 +444,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * monitoring and management.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.COMPUTE_CONTENT_LENGTH_FROM_MESSAGE_BODY =
+ * <li><b>com.github.freeims.javax.sip.COMPUTE_CONTENT_LENGTH_FROM_MESSAGE_BODY
+ * =
  * [true|false] </b> <br/>
  * Default is <it>false</it> If set to <it>true</it>, when you are creating a
  * message from a <it>String</it>, the MessageFactory will compute the content
@@ -426,7 +453,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * parameter in the Message. Otherwise, it will use the content length supplied
  * and generate a parse exception if the content is truncated.
  * 
- * <li><b>org.freeims.javax.sip.CANCEL_CLIENT_TRANSACTION_CHECKED = [true|false]
+ * <li><b>com.github.freeims.javax.sip.CANCEL_CLIENT_TRANSACTION_CHECKED =
+ * [true|false]
  * </b> <br/>
  * Default is <it>true</it>. This flag is added in support of load balancers or
  * failover managers where you may want to cancel ongoing transactions from a
@@ -438,7 +466,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * has been Terminated. Clearly this will result in protocol errors. Setting the
  * flag to true ( default ) enables you to avoid common protocol errors.</li>
  * 
- * <li><b>org.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT = [true|false]
+ * </b>
  * <br/>
  * Default is <it>false</it> This property controls a setting on the Dialog
  * objects that the stack manages. Pure B2BUA applications should set this flag
@@ -453,27 +482,28 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * 32 seconds, then the dialog is torn down and a BYE sent to the peer.</li>
  * 
  * 
- * <li><b>org.freeims.javax.sip.RECEIVE_UDP_BUFFER_SIZE = int </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.RECEIVE_UDP_BUFFER_SIZE = int </b> <br/>
  * Default is <it>8*1024</it>. This property control the size of the UDP buffer
  * used for SIP messages. Under load, if the buffer capacity is overflown the
  * messages are dropped causing retransmissions, further increasing the load and
  * causing even more retransmissions. Good values to this property for servers
  * is a big number in the order of 8*8*1024.</li>
  * 
- * <li><b>org.freeims.javax.sip.SEND_UDP_BUFFER_SIZE = int </b> <br/>
+ * <li><b>com.github.freeims.javax.sip.SEND_UDP_BUFFER_SIZE = int </b> <br/>
  * Default is <it>8*1024</it>. This property control the size of the UDP buffer
  * used for SIP messages. Under load, if the buffer capacity is overflown the
  * messages are dropped causing retransmissions, further increasing the load and
  * causing even more retransmissions. Good values to this property for servers
  * is a big number in the order of 8*8*1024 or higher.</li>
  * 
- * <li><b>org.freeims.javax.sip.CONGESTION_CONTROL_TIMEOUT = int </b> How
+ * <li><b>com.github.freeims.javax.sip.CONGESTION_CONTROL_TIMEOUT = int </b> How
  * much time messages are allowed to wait in queue before being dropped due to
  * stack being too slow to respond. Default value is 8000 ms. The value is in
  * milliseconds
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.TCP_POST_PARSING_THREAD_POOL_SIZE = integer </b>
+ * <li><b>com.github.freeims.javax.sip.TCP_POST_PARSING_THREAD_POOL_SIZE =
+ * integer </b>
  * Use 0 or do not set this option to disable it.
  * 
  * When using TCP your phones/clients usually connect independently creating
@@ -525,13 +555,15 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * will not be aligned any more. Eventually the connection will be closed.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.DELIVER_UNSOLICITED_NOTIFY = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.DELIVER_UNSOLICITED_NOTIFY = [true|false]
+ * </b>
  * <br/>
  * Default is <it>false</it>. This flag is added to allow Sip Listeners to
  * receive all NOTIFY requests including those that are not part of a valid
  * dialog.</li>
  * 
- * <li><b>org.freeims.javax.sip.REJECT_STRAY_RESPONSES = [true|false] </b>
+ * <li><b>com.github.freeims.javax.sip.REJECT_STRAY_RESPONSES = [true|false]
+ * </b>
  * Default
  * is <it>false</it> A flag that checks responses to test whether the response
  * corresponds to a via header that was previously generated by us. Note that
@@ -541,7 +573,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * to see if that response suffix is present. If it is not present, then the
  * stack will silently drop the response.</li>
  * 
- * <li><b>org.freeims.javax.sip.MAX_FORK_TIME_SECONDS = integer </b> Maximum
+ * <li><b>com.github.freeims.javax.sip.MAX_FORK_TIME_SECONDS = integer </b>
+ * Maximum
  * time for which the original
  * transaction for which a forked response is received is tracked. This property
  * is only relevant to Dialog Stateful applications ( User Agents or B2BUA).
@@ -552,42 +585,45 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * application.
  * The event handler can get the original transaction from this event.</li>
  * 
- * <li><b>org.freeims.javax.sip.EARLY_DIALOG_TIMEOUT_SECONDS=integer </b>
+ * <li><b>com.github.freeims.javax.sip.EARLY_DIALOG_TIMEOUT_SECONDS=integer </b>
  * Maximum time for which a dialog
  * can remain in early state. This is defaulted to 3 minutes ( 180 seconds).
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.THREAD_PRIORITY=integer </b> Control the
+ * <li><b>com.github.freeims.javax.sip.THREAD_PRIORITY=integer </b> Control the
  * priority of the threads started by the stack.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.MESSAGE_PARSER_FACTORY = name of the class
- * implementing org.freeims.javax.sip.parser.MessageParserFactory</b>
+ * <li><b>com.github.freeims.javax.sip.MESSAGE_PARSER_FACTORY = name of the
+ * class
+ * implementing com.github.freeims.javax.sip.parser.MessageParserFactory</b>
  * This factory allows pluggable implementations of the MessageParser that will
  * take care of parsing the incoming messages.
  * By example one could plug a lazy parser through this factory.</li>
  * 
- * <li><b>org.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY = name of the class
- * implementing org.freeims.javax.sip.parser.MessageProcessorFactory</b>
+ * <li><b>com.github.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY = name of the
+ * class
+ * implementing com.github.freeims.javax.sip.parser.MessageProcessorFactory</b>
  * This factory allows pluggable implementations of the MessageProcessor that
  * will take care of incoming messages.
  * By example one could plug a NIO Processor through this factory.</li>
  * 
- * <li><b>org.freeims.javax.sip.TIMER_CLASS_NAME = name of the class
- * implementing org.freeims.javax.sip.stack.timers.SipTimer</b> interface
+ * <li><b>com.github.freeims.javax.sip.TIMER_CLASS_NAME = name of the class
+ * implementing com.github.freeims.javax.sip.stack.timers.SipTimer</b> interface
  * This allows pluggable implementations of the Timer that will take care of
  * scheduling the various SIP Timers.
  * By example one could plug a regular timer, a scheduled thread pool
  * executor.</li>
  * 
- * <li><b>org.freeims.javax.sip.DELIVER_RETRANSMITTED_ACK_TO_LISTENER=boolean</b>
+ * <li><b>com.github.freeims.javax.sip.DELIVER_RETRANSMITTED_ACK_TO_LISTENER=boolean</b>
  * A testing property
  * that allows application to see the ACK for retransmitted 200 OK requests.
  * <b>Note that this is for test
  * purposes only</b></li>
  * 
  * *
- * <li><b>org.freeims.javax.sip.AGGRESSIVE_CLEANUP=boolean</b> A property that
+ * <li><b>com.github.freeims.javax.sip.AGGRESSIVE_CLEANUP=boolean</b> A property
+ * that
  * will cleanup Dialog, and Transaction structures
  * agrressively to improve memroy usage and performance (up to 50% gain).
  * However one needs to be careful in its code
@@ -595,7 +631,8 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * aggressively when transactions changes state
  * to COMPLETED or TERMINATED and for Dialog once the ACK is received/sent</li>
  * 
- * <li><b>org.freeims.javax.sip.MIN_KEEPALIVE_TIME_SECONDS = integer</b> Minimum
+ * <li><b>com.github.freeims.javax.sip.MIN_KEEPALIVE_TIME_SECONDS = integer</b>
+ * Minimum
  * time between keep alive
  * pings (CRLF CRLF) from clients. If pings arrive with less than this frequency
  * they will be replied
@@ -603,14 +640,16 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * not respond to CRLF CRLF).
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.DIALOG_TIMEOUT_FACTOR= integer</b> Default to
+ * <li><b>com.github.freeims.javax.sip.DIALOG_TIMEOUT_FACTOR= integer</b>
+ * Default to
  * 64. The number of ticks before a
  * dialog that does not receive an ACK receives a Timeout notification. Note
  * that this is only relevant
  * if the registered SipListener is of type SipListenerExt
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.SIP_MESSAGE_VALVE= String</b> Default to null.
+ * <li><b>com.github.freeims.javax.sip.SIP_MESSAGE_VALVE= String</b> Default to
+ * null.
  * The class name of your custom valve component.
  * An instance of this class will be created and the
  * SIPMessageValve.processRequest/Response() methods will be called for every
@@ -625,17 +664,20 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * request for the response was sent.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.SIP_EVENT_INTERCEPTOR</b> Default to null. The
+ * <li><b>com.github.freeims.javax.sip.SIP_EVENT_INTERCEPTOR</b> Default to
+ * null. The
  * class name of your custom interceptor object.
  * An instance of this object will be created at initialization of the stack.
  * You must implement the interface
- * org.freeims.javax.sip.stack.SIPEventInterceptor and handle the lifecycle
+ * com.github.freeims.javax.sip.stack.SIPEventInterceptor and handle the
+ * lifecycle
  * callbacks. This interface is the solution for
  * https://jain-sip.dev.java.net/issues/show_bug.cgi?id=337 . It allows to wrap
  * the JSIP pipeline and execute custom
  * analysis logic as SIP messages advance through the pipeline checkpoints. One
  * example implementation of this interceptor
- * is <b>org.freeims.javax.sip.stack.CallAnalysisInterceptor</b>, which will
+ * is <b>com.github.freeims.javax.sip.stack.CallAnalysisInterceptor</b>, which
+ * will
  * periodically check for requests stuck in the
  * JAIN SIP threads and if some request is taking too long it will log the stack
  * traces for all threads. The logging can
@@ -644,11 +686,12 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * production under load is only 2% peak on average laptop machine. There is
  * minimal locking inside. One known limitation
  * of this feature is that you must use
- * org.freeims.javax.sip.REENTRANT_LISTENER=true to ensure that the request will
+ * com.github.freeims.javax.sip.REENTRANT_LISTENER=true to ensure that the
+ * request will
  * be
  * processed in the original thread completely for UDP.</li>
  * 
- * <li><b>org.freeims.javax.sip.TLS_CLIENT_PROTOCOLS = String </b>
+ * <li><b>com.github.freeims.javax.sip.TLS_CLIENT_PROTOCOLS = String </b>
  * Comma-separated list of protocols to use when creating outgoing TLS
  * connections.
  * The default is "TLSv1.2, TLSv1.1, TLSv1".
@@ -656,14 +699,16 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * http://googleonlinesecurity.blogspot.fr/2014/10/this-poodle-bites-exploiting-ssl-30.html
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.TLS_SECURITY_POLICY = String </b> The fully
+ * <li><b>com.github.freeims.javax.sip.TLS_SECURITY_POLICY = String </b> The
+ * fully
  * qualified path
  * name of a TLS Security Policy implementation that is consulted for
  * certificate verification
  * of outbund TLS connections.
  * </li>
  * 
- * <li><b>org.freeims.javax.sip.TLS_CLIENT_AUTH_TYPE = String </b> Valid values
+ * <li><b>com.github.freeims.javax.sip.TLS_CLIENT_AUTH_TYPE = String </b> Valid
+ * values
  * are Default (backward compatible with previous versions)
  * , Enabled, Want, Disabled or DisabledAll. Set to Enabled if you want the SSL
  * stack to require a valid certificate chain from the client before
@@ -674,17 +719,20 @@ import com.github.freeims.javax.sip.stack.timers.SipTimer;
  * Server and Client Connections.
  * </li>
  *
- * <li><b>org.freeims.javax.sip.RELIABLE_CONNECTION_KEEP_ALIVE_TIMEOUT</b> Value
+ * <li><b>com.github.freeims.javax.sip.RELIABLE_CONNECTION_KEEP_ALIVE_TIMEOUT</b>
+ * Value
  * in seconds which is used as default keepalive timeout
  * (See also http://tools.ietf.org/html/rfc5626#section-4.4.1). Defaults to
  * "infiinity" seconds (i.e. timeout event not delivered).</li>
  * 
- * <li><b>org.freeims.javax.sip.SSL_HANDSHAKE_TIMEOUT</b> Value in seconds which
+ * <li><b>com.github.freeims.javax.sip.SSL_HANDSHAKE_TIMEOUT</b> Value in
+ * seconds which
  * is used as default timeout for performing the SSL Handshake
  * This prevents bad clients of connecting without sending any data to block the
  * server</li>
  * 
- * <li><b>org.freeims.javax.sip.SSL_RENEGOTIATION_ENABLED = [true|false]</b>
+ * <li><b>com.github.freeims.javax.sip.SSL_RENEGOTIATION_ENABLED =
+ * [true|false]</b>
  * Default value is <b>true</b>. Allow or disallow SSL renegotiation to resolve
  * potential DoS problem -
  * <a href=
@@ -803,7 +851,8 @@ public class SipStackImpl extends SIPTransactionStack implements
 		this.sipProviders = Collections.synchronizedList(new LinkedList<SipProviderImpl>());
 		this.sipListener = null;
 		if (!getTimer().isStarted()) {
-			String defaultTimerName = configurationProperties.getProperty("org.freeims.javax.sip.TIMER_CLASS_NAME",
+			String defaultTimerName = configurationProperties.getProperty(
+					"com.github.freeims.javax.sip.TIMER_CLASS_NAME",
 					DefaultSipTimer.class.getName());
 			try {
 				setTimer((SipTimer) Class.forName(defaultTimerName).newInstance());
@@ -815,7 +864,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 			} catch (Exception e) {
 				logger
 						.logError(
-								"Bad configuration value for org.freeims.javax.sip.TIMER_CLASS_NAME", e);
+								"Bad configuration value for com.github.freeims.javax.sip.TIMER_CLASS_NAME", e);
 			}
 		}
 	}
@@ -866,10 +915,10 @@ public class SipStackImpl extends SIPTransactionStack implements
 			throw new PeerUnavailableException("stack name is missing");
 		super.setStackName(name);
 		String stackLoggerClassName = configurationProperties
-				.getProperty("org.freeims.javax.sip.STACK_LOGGER");
+				.getProperty("com.github.freeims.javax.sip.STACK_LOGGER");
 		// To log debug messages.
 		if (stackLoggerClassName == null)
-			stackLoggerClassName = "org.freeims.core.LogWriter";
+			stackLoggerClassName = "com.github.freeims.core.LogWriter";
 		try {
 			Class<?> stackLoggerClass = Class.forName(stackLoggerClassName);
 			Class<?>[] constructorArgs = new Class[0];
@@ -894,10 +943,10 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String serverLoggerClassName = configurationProperties
-				.getProperty("org.freeims.javax.sip.SERVER_LOGGER");
+				.getProperty("com.github.freeims.javax.sip.SERVER_LOGGER");
 		// To log debug messages.
 		if (serverLoggerClassName == null)
-			serverLoggerClassName = "org.freeims.javax.sip.stack.ServerLog";
+			serverLoggerClassName = "com.github.freeims.javax.sip.stack.ServerLog";
 		try {
 			Class<?> serverLoggerClass = Class
 					.forName(serverLoggerClassName);
@@ -923,16 +972,17 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		super.setReliableConnectionKeepAliveTimeout(1000 * Integer.parseInt(
-				configurationProperties.getProperty("org.freeims.javax.sip.RELIABLE_CONNECTION_KEEP_ALIVE_TIMEOUT",
+				configurationProperties.getProperty(
+						"com.github.freeims.javax.sip.RELIABLE_CONNECTION_KEEP_ALIVE_TIMEOUT",
 						"-1")));
 
 		// http://java.net/jira/browse/JSIP-415 Prevent Bad Client or Attacker (DoS) to
 		// block the TLSMessageProcessor or TLSMessageChannel
 		super.setSslHandshakeTimeout(Long.parseLong(
-				configurationProperties.getProperty("org.freeims.javax.sip.SSL_HANDSHAKE_TIMEOUT", "-1")));
+				configurationProperties.getProperty("com.github.freeims.javax.sip.SSL_HANDSHAKE_TIMEOUT", "-1")));
 
 		super.setThreadPriority(Integer.parseInt(
-				configurationProperties.getProperty("org.freeims.javax.sip.THREAD_PRIORITY",
+				configurationProperties.getProperty("com.github.freeims.javax.sip.THREAD_PRIORITY",
 						"" + Thread.MAX_PRIORITY)));
 
 		// Default router -- use this for routing SIP URIs.
@@ -942,7 +992,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 
 		// http://java.net/jira/browse/JSIP-430
 		ByteBufferFactory.getInstance().setUseDirect(Boolean.valueOf(
-				configurationProperties.getProperty("org.freeims.javax.sip.stack.USE_DIRECT_BUFFERS",
+				configurationProperties.getProperty("com.github.freeims.javax.sip.stack.USE_DIRECT_BUFFERS",
 						Boolean.TRUE.toString())));
 
 		this.defaultRouter = new DefaultRouter(this, outboundProxy);
@@ -951,7 +1001,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		String routerPath = configurationProperties
 				.getProperty("javax.sip.ROUTER_PATH");
 		if (routerPath == null)
-			routerPath = "org.freeims.javax.sip.stack.DefaultRouter";
+			routerPath = "com.github.freeims.javax.sip.stack.DefaultRouter";
 
 		try {
 			Class<?> routerClass = Class.forName(routerPath);
@@ -1012,7 +1062,8 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		// Allow application to choose the tls client auth policy on the socket
-		String clientAuthType = configurationProperties.getProperty("org.freeims.javax.sip.TLS_CLIENT_AUTH_TYPE");
+		String clientAuthType = configurationProperties
+				.getProperty("com.github.freeims.javax.sip.TLS_CLIENT_AUTH_TYPE");
 		if (clientAuthType != null) {
 			super.clientAuth = ClientAuthType.valueOf(clientAuthType);
 			logger.logInfo("using " + clientAuthType + " tls auth policy");
@@ -1057,57 +1108,57 @@ public class SipStackImpl extends SIPTransactionStack implements
 				.equalsIgnoreCase("on");
 
 		super.isAutomaticDialogErrorHandlingEnabled = configurationProperties
-				.getProperty("org.freeims.javax.sip.AUTOMATIC_DIALOG_ERROR_HANDLING", "true")
+				.getProperty("com.github.freeims.javax.sip.AUTOMATIC_DIALOG_ERROR_HANDLING", "true")
 				.equals(Boolean.TRUE.toString());
 		if (super.isAutomaticDialogSupportEnabled) {
 			super.isAutomaticDialogErrorHandlingEnabled = true;
 		}
 
 		if (configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME") != null) {
+				.getProperty("com.github.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME") != null) {
 			super.maxListenerResponseTime = Integer
 					.parseInt(configurationProperties
-							.getProperty("org.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME"));
+							.getProperty("com.github.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME"));
 			if (super.maxListenerResponseTime <= 0)
 				throw new PeerUnavailableException(
-						"Bad configuration parameter org.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME : should be positive");
+						"Bad configuration parameter com.github.freeims.javax.sip.MAX_LISTENER_RESPONSE_TIME : should be positive");
 		} else {
 			super.maxListenerResponseTime = -1;
 		}
 
 		if (configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_TX_LIFETIME_INVITE") != null) {
+				.getProperty("com.github.freeims.javax.sip.MAX_TX_LIFETIME_INVITE") != null) {
 			super.maxTxLifetimeInvite = Integer
 					.parseInt(configurationProperties
-							.getProperty("org.freeims.javax.sip.MAX_TX_LIFETIME_INVITE"));
+							.getProperty("com.github.freeims.javax.sip.MAX_TX_LIFETIME_INVITE"));
 			if (super.getMaxTxLifetimeInvite() <= 0)
 				throw new PeerUnavailableException(
-						"Bad configuration parameter org.freeims.javax.sip.MAX_TX_LIFETIME_INVITE : should be positive");
+						"Bad configuration parameter com.github.freeims.javax.sip.MAX_TX_LIFETIME_INVITE : should be positive");
 		} else {
 			super.maxTxLifetimeInvite = -1;
 		}
 
 		// http://java.net/jira/browse/JSIP-420
 		if (configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE") != null) {
+				.getProperty("com.github.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE") != null) {
 			super.maxTxLifetimeNonInvite = Integer
 					.parseInt(configurationProperties
-							.getProperty("org.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE"));
+							.getProperty("com.github.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE"));
 			if (super.getMaxTxLifetimeNonInvite() <= 0)
 				throw new PeerUnavailableException(
-						"Bad configuration parameter org.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE : should be positive");
+						"Bad configuration parameter com.github.freeims.javax.sip.MAX_TX_LIFETIME_NON_INVITE : should be positive");
 		} else {
 			super.maxTxLifetimeNonInvite = -1;
 		}
 
 		this.setDeliverTerminatedEventForAck(configurationProperties
 				.getProperty(
-						"org.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_ACK",
+						"com.github.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_ACK",
 						"false")
 				.equalsIgnoreCase("true"));
 
 		super.setDeliverUnsolicitedNotify(Boolean.parseBoolean(configurationProperties.getProperty(
-				"org.freeims.javax.sip.DELIVER_UNSOLICITED_NOTIFY", "false")));
+				"com.github.freeims.javax.sip.DELIVER_UNSOLICITED_NOTIFY", "false")));
 
 		String forkedSubscriptions = configurationProperties
 				.getProperty("javax.sip.FORKABLE_EVENTS");
@@ -1120,9 +1171,9 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		// Allow application to hook in a TLS Security Policy implementation
-		String tlsPolicyPath = configurationProperties.getProperty("org.freeims.javax.sip.TLS_SECURITY_POLICY");
+		String tlsPolicyPath = configurationProperties.getProperty("com.github.freeims.javax.sip.TLS_SECURITY_POLICY");
 		if (tlsPolicyPath == null) {
-			tlsPolicyPath = "org.freeims.javax.sip.stack.DefaultTlsSecurityPolicy";
+			tlsPolicyPath = "com.github.freeims.javax.sip.stack.DefaultTlsSecurityPolicy";
 			logger.logWarning("using default tls security policy");
 		}
 		try {
@@ -1148,7 +1199,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		 * NIST only feature.
 		 */
 
-		final String NETWORK_LAYER_KEY = "org.freeims.javax.sip.NETWORK_LAYER";
+		final String NETWORK_LAYER_KEY = "com.github.freeims.javax.sip.NETWORK_LAYER";
 
 		if (configurationProperties.containsKey(NETWORK_LAYER_KEY)) {
 			String path = configurationProperties
@@ -1166,7 +1217,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 			}
 		}
 
-		final String ADDRESS_RESOLVER_KEY = "org.freeims.javax.sip.ADDRESS_RESOLVER";
+		final String ADDRESS_RESOLVER_KEY = "com.github.freeims.javax.sip.ADDRESS_RESOLVER";
 
 		if (configurationProperties.containsKey(ADDRESS_RESOLVER_KEY)) {
 			String path = configurationProperties
@@ -1185,7 +1236,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String maxConnections = configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_CONNECTIONS");
+				.getProperty("com.github.freeims.javax.sip.MAX_CONNECTIONS");
 		if (maxConnections != null) {
 			try {
 				this.maxConnections = new Integer(maxConnections).intValue();
@@ -1197,7 +1248,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String threadPoolSize = configurationProperties
-				.getProperty("org.freeims.javax.sip.THREAD_POOL_SIZE");
+				.getProperty("com.github.freeims.javax.sip.THREAD_POOL_SIZE");
 		if (threadPoolSize != null) {
 			try {
 				this.threadPoolSize = new Integer(threadPoolSize).intValue();
@@ -1210,12 +1261,12 @@ public class SipStackImpl extends SIPTransactionStack implements
 
 		int congetstionControlTimeout = Integer
 				.parseInt(configurationProperties.getProperty(
-						"org.freeims.javax.sip.CONGESTION_CONTROL_TIMEOUT",
+						"com.github.freeims.javax.sip.CONGESTION_CONTROL_TIMEOUT",
 						"8000"));
 		super.stackCongenstionControlTimeout = congetstionControlTimeout;
 
 		String tcpTreadPoolSize = configurationProperties
-				.getProperty("org.freeims.javax.sip.TCP_POST_PARSING_THREAD_POOL_SIZE");
+				.getProperty("com.github.freeims.javax.sip.TCP_POST_PARSING_THREAD_POOL_SIZE");
 		if (tcpTreadPoolSize != null) {
 			try {
 				int threads = new Integer(tcpTreadPoolSize).intValue();
@@ -1230,7 +1281,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String serverTransactionTableSize = configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_SERVER_TRANSACTIONS");
+				.getProperty("com.github.freeims.javax.sip.MAX_SERVER_TRANSACTIONS");
 		if (serverTransactionTableSize != null) {
 			try {
 				this.serverTransactionTableHighwaterMark = new Integer(
@@ -1252,7 +1303,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String clientTransactionTableSize = configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_CLIENT_TRANSACTIONS");
+				.getProperty("com.github.freeims.javax.sip.MAX_CLIENT_TRANSACTIONS");
 		if (clientTransactionTableSize != null) {
 			try {
 				this.clientTransactionTableHiwaterMark = new Integer(
@@ -1275,7 +1326,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 		 * NIST only feature.
 		 */
 
-		final String SECURITY_MANAGER_PROVIDER_KEY = "org.freeims.javax.sip.SECURITY_MANAGER_PROVIDER";
+		final String SECURITY_MANAGER_PROVIDER_KEY = "com.github.freeims.javax.sip.SECURITY_MANAGER_PROVIDER";
 
 		if (configurationProperties.containsKey(SECURITY_MANAGER_PROVIDER_KEY)) {
 			String path = configurationProperties
@@ -1302,7 +1353,7 @@ public class SipStackImpl extends SIPTransactionStack implements
 
 		super.cacheServerConnections = true;
 		String flag = configurationProperties
-				.getProperty("org.freeims.javax.sip.CACHE_SERVER_CONNECTIONS");
+				.getProperty("com.github.freeims.javax.sip.CACHE_SERVER_CONNECTIONS");
 
 		if (flag != null && "false".equalsIgnoreCase(flag.trim())) {
 			super.cacheServerConnections = false;
@@ -1310,14 +1361,14 @@ public class SipStackImpl extends SIPTransactionStack implements
 
 		super.cacheClientConnections = true;
 		String cacheflag = configurationProperties
-				.getProperty("org.freeims.javax.sip.CACHE_CLIENT_CONNECTIONS");
+				.getProperty("com.github.freeims.javax.sip.CACHE_CLIENT_CONNECTIONS");
 
 		if (cacheflag != null && "false".equalsIgnoreCase(cacheflag.trim())) {
 			super.cacheClientConnections = false;
 		}
 
 		String readTimeout = configurationProperties
-				.getProperty("org.freeims.javax.sip.READ_TIMEOUT");
+				.getProperty("com.github.freeims.javax.sip.READ_TIMEOUT");
 		if (readTimeout != null) {
 			try {
 
@@ -1337,15 +1388,15 @@ public class SipStackImpl extends SIPTransactionStack implements
 		// Get the address of the stun server.
 
 		String stunAddr = configurationProperties
-				.getProperty("org.freeims.javax.sip.STUN_SERVER");
+				.getProperty("com.github.freeims.javax.sip.STUN_SERVER");
 
 		if (stunAddr != null)
 			this.logger.logWarning(
 					"Ignoring obsolete property "
-							+ "org.freeims.javax.sip.STUN_SERVER");
+							+ "com.github.freeims.javax.sip.STUN_SERVER");
 
 		String maxMsgSize = configurationProperties
-				.getProperty("org.freeims.javax.sip.MAX_MESSAGE_SIZE");
+				.getProperty("com.github.freeims.javax.sip.MAX_MESSAGE_SIZE");
 
 		try {
 			if (maxMsgSize != null) {
@@ -1363,12 +1414,12 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String rel = configurationProperties
-				.getProperty("org.freeims.javax.sip.REENTRANT_LISTENER");
+				.getProperty("com.github.freeims.javax.sip.REENTRANT_LISTENER");
 		this.reEntrantListener = (rel != null && "true".equalsIgnoreCase(rel));
 
 		// Check if a thread audit interval is specified
 		String interval = configurationProperties
-				.getProperty("org.freeims.javax.sip.THREAD_AUDIT_INTERVAL_IN_MILLISECS");
+				.getProperty("com.github.freeims.javax.sip.THREAD_AUDIT_INTERVAL_IN_MILLISECS");
 		if (interval != null) {
 			try {
 				// Make the monitored threads ping the auditor twice as fast as
@@ -1389,17 +1440,17 @@ public class SipStackImpl extends SIPTransactionStack implements
 						.valueOf(
 								configurationProperties
 										.getProperty(
-												"org.freeims.javax.sip.PASS_INVITE_NON_2XX_ACK_TO_LISTENER",
+												"com.github.freeims.javax.sip.PASS_INVITE_NON_2XX_ACK_TO_LISTENER",
 												"false"))
 						.booleanValue());
 
 		this.generateTimeStampHeader = Boolean.valueOf(
 				configurationProperties.getProperty(
-						"org.freeims.javax.sip.AUTO_GENERATE_TIMESTAMP", "false"))
+						"com.github.freeims.javax.sip.AUTO_GENERATE_TIMESTAMP", "false"))
 				.booleanValue();
 
 		String messageLogFactoryClasspath = configurationProperties
-				.getProperty("org.freeims.javax.sip.LOG_FACTORY");
+				.getProperty("com.github.freeims.javax.sip.LOG_FACTORY");
 		if (messageLogFactoryClasspath != null) {
 			try {
 				Class<?> clazz = Class.forName(messageLogFactoryClasspath);
@@ -1419,13 +1470,13 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		boolean computeContentLength = configurationProperties.getProperty(
-				"org.freeims.javax.sip.COMPUTE_CONTENT_LENGTH_FROM_MESSAGE_BODY",
+				"com.github.freeims.javax.sip.COMPUTE_CONTENT_LENGTH_FROM_MESSAGE_BODY",
 				"false").equalsIgnoreCase("true");
 		StringMsgParser
 				.setComputeContentLengthFromMessage(computeContentLength);
 
 		String tlsClientProtocols = configurationProperties.getProperty(
-				"org.freeims.javax.sip.TLS_CLIENT_PROTOCOLS");
+				"com.github.freeims.javax.sip.TLS_CLIENT_PROTOCOLS");
 		if (tlsClientProtocols != null) {
 			// http://java.net/jira/browse/JSIP-451 - josemrecio
 			// accepts protocol list enclosed in "" and separated by spaces and/or commas
@@ -1448,16 +1499,16 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		super.rfc2543Supported = configurationProperties.getProperty(
-				"org.freeims.javax.sip.RFC_2543_SUPPORT_ENABLED", "true")
+				"com.github.freeims.javax.sip.RFC_2543_SUPPORT_ENABLED", "true")
 				.equalsIgnoreCase("true");
 
 		super.cancelClientTransactionChecked = configurationProperties
 				.getProperty(
-						"org.freeims.javax.sip.CANCEL_CLIENT_TRANSACTION_CHECKED",
+						"com.github.freeims.javax.sip.CANCEL_CLIENT_TRANSACTION_CHECKED",
 						"true")
 				.equalsIgnoreCase("true");
 		super.logStackTraceOnMessageSend = configurationProperties.getProperty(
-				"org.freeims.javax.sip.LOG_STACK_TRACE_ON_MESSAGE_SEND", "false")
+				"com.github.freeims.javax.sip.LOG_STACK_TRACE_ON_MESSAGE_SEND", "false")
 				.equalsIgnoreCase("true");
 		if (logger.isLoggingEnabled(LogLevels.TRACE_DEBUG))
 			logger.logDebug(
@@ -1479,78 +1530,83 @@ public class SipStackImpl extends SIPTransactionStack implements
 		}
 
 		String bufferSize = configurationProperties.getProperty(
-				"org.freeims.javax.sip.RECEIVE_UDP_BUFFER_SIZE", MAX_DATAGRAM_SIZE
+				"com.github.freeims.javax.sip.RECEIVE_UDP_BUFFER_SIZE", MAX_DATAGRAM_SIZE
 						.toString());
 		int bufferSizeInteger = new Integer(bufferSize).intValue();
 		super.setReceiveUdpBufferSize(bufferSizeInteger);
 
 		bufferSize = configurationProperties.getProperty(
-				"org.freeims.javax.sip.SEND_UDP_BUFFER_SIZE", MAX_DATAGRAM_SIZE
+				"com.github.freeims.javax.sip.SEND_UDP_BUFFER_SIZE", MAX_DATAGRAM_SIZE
 						.toString());
 		bufferSizeInteger = new Integer(bufferSize).intValue();
 		super.setSendUdpBufferSize(bufferSizeInteger);
 
 		super.isBackToBackUserAgent = Boolean
 				.parseBoolean(configurationProperties.getProperty(
-						"org.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT",
+						"com.github.freeims.javax.sip.IS_BACK_TO_BACK_USER_AGENT",
 						Boolean.FALSE.toString()));
 		super.checkBranchId = Boolean.parseBoolean(configurationProperties
-				.getProperty("org.freeims.javax.sip.REJECT_STRAY_RESPONSES",
+				.getProperty("com.github.freeims.javax.sip.REJECT_STRAY_RESPONSES",
 						Boolean.FALSE.toString()));
 
 		super.isDialogTerminatedEventDeliveredForNullDialog = (Boolean.parseBoolean(
-				configurationProperties.getProperty("org.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG",
+				configurationProperties.getProperty(
+						"com.github.freeims.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG",
 						Boolean.FALSE.toString())));
 
 		super.maxForkTime = Integer.parseInt(
-				configurationProperties.getProperty("org.freeims.javax.sip.MAX_FORK_TIME_SECONDS", "0"));
+				configurationProperties.getProperty("com.github.freeims.javax.sip.MAX_FORK_TIME_SECONDS", "0"));
 
 		super.earlyDialogTimeout = Integer.parseInt(
-				configurationProperties.getProperty("org.freeims.javax.sip.EARLY_DIALOG_TIMEOUT_SECONDS", "180"));
+				configurationProperties.getProperty("com.github.freeims.javax.sip.EARLY_DIALOG_TIMEOUT_SECONDS",
+						"180"));
 
 		super.minKeepAliveInterval = Integer.parseInt(
-				configurationProperties.getProperty("org.freeims.javax.sip.MIN_KEEPALIVE_TIME_SECONDS", "-1"));
+				configurationProperties.getProperty("com.github.freeims.javax.sip.MIN_KEEPALIVE_TIME_SECONDS", "-1"));
 
 		super.deliverRetransmittedAckToListener = Boolean.parseBoolean(configurationProperties
-				.getProperty("org.freeims.javax.sip.DELIVER_RETRANSMITTED_ACK_TO_LISTENER", "false"));
+				.getProperty("com.github.freeims.javax.sip.DELIVER_RETRANSMITTED_ACK_TO_LISTENER", "false"));
 
 		super.dialogTimeoutFactor = Integer
-				.parseInt(configurationProperties.getProperty("org.freeims.javax.sip.DIALOG_TIMEOUT_FACTOR", "64"));
+				.parseInt(configurationProperties.getProperty("com.github.freeims.javax.sip.DIALOG_TIMEOUT_FACTOR",
+						"64"));
 
 		String messageParserFactoryName = configurationProperties
-				.getProperty("org.freeims.javax.sip.MESSAGE_PARSER_FACTORY", StringMsgParserFactory.class.getName());
+				.getProperty("com.github.freeims.javax.sip.MESSAGE_PARSER_FACTORY",
+						StringMsgParserFactory.class.getName());
 		try {
 			super.messageParserFactory = (MessageParserFactory) Class.forName(messageParserFactoryName).newInstance();
 		} catch (Exception e) {
 			logger
 					.logError(
-							"Bad configuration value for org.freeims.javax.sip.MESSAGE_PARSER_FACTORY", e);
+							"Bad configuration value for com.github.freeims.javax.sip.MESSAGE_PARSER_FACTORY", e);
 		}
 
 		String messageProcessorFactoryName = configurationProperties.getProperty(
-				"org.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY", OIOMessageProcessorFactory.class.getName());
+				"com.github.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY", OIOMessageProcessorFactory.class.getName());
 		try {
 			super.messageProcessorFactory = (MessageProcessorFactory) Class.forName(messageProcessorFactoryName)
 					.newInstance();
 		} catch (Exception e) {
 			logger
 					.logError(
-							"Bad configuration value for org.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY", e);
+							"Bad configuration value for com.github.freeims.javax.sip.MESSAGE_PROCESSOR_FACTORY", e);
 		}
 
-		String maxIdleTimeString = configurationProperties.getProperty("org.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME",
+		String maxIdleTimeString = configurationProperties.getProperty(
+				"com.github.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME",
 				"7200000");
 		try {
 			super.nioSocketMaxIdleTime = Long.parseLong(maxIdleTimeString);
 		} catch (Exception e) {
 			logger
 					.logError(
-							"Bad configuration value for org.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME="
+							"Bad configuration value for com.github.freeims.javax.sip.NIO_MAX_SOCKET_IDLE_TIME="
 									+ maxIdleTimeString,
 							e);
 		}
 
-		String defaultTimerName = configurationProperties.getProperty("org.freeims.javax.sip.TIMER_CLASS_NAME",
+		String defaultTimerName = configurationProperties.getProperty("com.github.freeims.javax.sip.TIMER_CLASS_NAME",
 				DefaultSipTimer.class.getName());
 		try {
 			setTimer((SipTimer) Class.forName(defaultTimerName).newInstance());
@@ -1562,13 +1618,14 @@ public class SipStackImpl extends SIPTransactionStack implements
 		} catch (Exception e) {
 			logger
 					.logError(
-							"Bad configuration value for org.freeims.javax.sip.TIMER_CLASS_NAME", e);
+							"Bad configuration value for com.github.freeims.javax.sip.TIMER_CLASS_NAME", e);
 		}
 		super.aggressiveCleanup = Boolean.parseBoolean(configurationProperties
-				.getProperty("org.freeims.javax.sip.AGGRESSIVE_CLEANUP",
+				.getProperty("com.github.freeims.javax.sip.AGGRESSIVE_CLEANUP",
 						Boolean.FALSE.toString()));
 
-		String valveClassName = configurationProperties.getProperty("org.freeims.javax.sip.SIP_MESSAGE_VALVE", null);
+		String valveClassName = configurationProperties.getProperty("com.github.freeims.javax.sip.SIP_MESSAGE_VALVE",
+				null);
 		if (valveClassName != null && !valveClassName.equals("")) {
 			try {
 				super.sipMessageValve = (SIPMessageValve) Class.forName(valveClassName).newInstance();
@@ -1585,11 +1642,12 @@ public class SipStackImpl extends SIPTransactionStack implements
 			} catch (Exception e) {
 				logger
 						.logError(
-								"Bad configuration value for org.freeims.javax.sip.SIP_MESSAGE_VALVE", e);
+								"Bad configuration value for com.github.freeims.javax.sip.SIP_MESSAGE_VALVE", e);
 			}
 		}
 
-		String interceptorClassName = configurationProperties.getProperty("org.freeims.javax.sip.SIP_EVENT_INTERCEPTOR",
+		String interceptorClassName = configurationProperties.getProperty(
+				"com.github.freeims.javax.sip.SIP_EVENT_INTERCEPTOR",
 				null);
 		if (interceptorClassName != null && !interceptorClassName.equals("")) {
 			try {
@@ -1610,12 +1668,12 @@ public class SipStackImpl extends SIPTransactionStack implements
 			} catch (Exception e) {
 				logger
 						.logError(
-								"Bad configuration value for org.freeims.javax.sip.SIP_EVENT_INTERCEPTOR", e);
+								"Bad configuration value for com.github.freeims.javax.sip.SIP_EVENT_INTERCEPTOR", e);
 			}
 		}
 
 		boolean sslRenegotiationEnabled = Boolean.parseBoolean(configurationProperties.getProperty(
-				"org.freeims.javax.sip.SSL_RENEGOTIATION_ENABLED",
+				"com.github.freeims.javax.sip.SSL_RENEGOTIATION_ENABLED",
 				"true"));
 
 		setSslRenegotiationEnabled(sslRenegotiationEnabled);
@@ -1955,7 +2013,8 @@ public class SipStackImpl extends SIPTransactionStack implements
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.freeims.javax.sip.SipStackExt#getAuthenticationHelper(org.freeims.javax
+	 * com.github.freeims.javax.sip.SipStackExt#getAuthenticationHelper(com.github.
+	 * freeims.javax
 	 * .sip.clientauthutils.AccountManager, javax.sip.header.HeaderFactory)
 	 */
 	public AuthenticationHelper getAuthenticationHelper(
@@ -1967,7 +2026,8 @@ public class SipStackImpl extends SIPTransactionStack implements
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.freeims.javax.sip.SipStackExt#getAuthenticationHelper(org.freeims.javax
+	 * com.github.freeims.javax.sip.SipStackExt#getAuthenticationHelper(com.github.
+	 * freeims.javax
 	 * .sip.clientauthutils.AccountManager, javax.sip.header.HeaderFactory)
 	 */
 	public AuthenticationHelper getSecureAuthenticationHelper(
